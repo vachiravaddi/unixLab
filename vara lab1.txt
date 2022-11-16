@@ -1,0 +1,279 @@
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad.txt
+cat: varaprasad.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cat < varaprasad.text
+bash: varaprasad.text: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cat > varaprasad.txt
+hi this is varaprasad vaddi
+  
+
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad.txt
+hi this is varaprasad vaddi
+
+
+bmsce@bmsce-Precision-T1700:~$ cat < varaprasad2.txt
+bash: varaprasad2.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cat > varaprasad2.txt
+this is the new varaprasad2 file 
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad2.txt
+this is the new varaprasad2 file 
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad.txt varaprasad2.text > vara.txt
+cat: varaprasad2.text: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad.txt varaprasad2.txt > vara.txt
+bmsce@bmsce-Precision-T1700:~$ cat vara/txt
+cat: vara/txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cat vara.txt
+hi this is varaprasad vaddi
+
+
+this is the new varaprasad2 file 
+bmsce@bmsce-Precision-T1700:~$ cat vara.txt  < varaprasad.txt
+hi this is varaprasad vaddi
+
+
+this is the new varaprasad2 file 
+bmsce@bmsce-Precision-T1700:~$ cat vara.txt
+hi this is varaprasad vaddi
+
+
+this is the new varaprasad2 file 
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad.txt
+hi this is varaprasad vaddi
+
+
+bmsce@bmsce-Precision-T1700:~$ mkdir newFolder
+bmsce@bmsce-Precision-T1700:~$ cd newFolder
+bmsce@bmsce-Precision-T1700:~/newFolder$ 
+bmsce@bmsce-Precision-T1700:~/newFolder$ cat syed/txt
+cat: syed/txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/newFolder$ cat < syed.txt
+bash: syed.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/newFolder$ cat > syed.txt
+i'm an asshole
+bmsce@bmsce-Precision-T1700:~/newFolder$ cat syed.txt
+i'm an asshole
+bmsce@bmsce-Precision-T1700:~/newFolder$ cd..
+cd..: command not found
+bmsce@bmsce-Precision-T1700:~/newFolder$ cd ..
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad.txt < "newFolder/syed.txt"
+hi this is varaprasad vaddi
+
+
+bmsce@bmsce-Precision-T1700:~$ cat syed.txt
+cat: syed.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cd newFolder
+bmsce@bmsce-Precision-T1700:~/newFolder$ cat syed.txt
+i'm an asshole
+bmsce@bmsce-Precision-T1700:~/newFolder$ cat varaprasad.txt > "newFolder/syed.txt"
+bash: newFolder/syed.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/newFolder$ cd..
+cd..: command not found
+bmsce@bmsce-Precision-T1700:~/newFolder$ cd ..
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad.txt > "newFolder/syed.txt"
+bmsce@bmsce-Precision-T1700:~$ cat varaprasad.txt
+hi this is varaprasad vaddi
+
+
+bmsce@bmsce-Precision-T1700:~$ cat "newFolder/syed.txt"
+hi this is varaprasad vaddi
+
+
+bmsce@bmsce-Precision-T1700:~$ mkdir vara
+bmsce@bmsce-Precision-T1700:~$ cd vara
+bmsce@bmsce-Precision-T1700:~/vara$ cat file1.txt
+cat: file1.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file1.txt
+this is file1
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file2.txt
+file 2   
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file3.txt
+file 3
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+file1.txt  file2.txt  file3.txt
+bmsce@bmsce-Precision-T1700:~/vara$ cd ..
+bmsce@bmsce-Precision-T1700:~$ mkdir syed
+bmsce@bmsce-Precision-T1700:~$ cd syed ls
+bash: cd: too many arguments
+bmsce@bmsce-Precision-T1700:~$ cd syed
+bmsce@bmsce-Precision-T1700:~/syed$ ls
+bmsce@bmsce-Precision-T1700:~/syed$ cd ..
+bmsce@bmsce-Precision-T1700:~$ cd vara
+bmsce@bmsce-Precision-T1700:~/vara$ cp file* home/syde
+cp: target 'home/syde' is not a directory
+bmsce@bmsce-Precision-T1700:~/vara$ cd ..
+bmsce@bmsce-Precision-T1700:~$ cp "vara/file*" syed
+cp: cannot stat 'vara/file*': No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cp vara/file* syed
+bmsce@bmsce-Precision-T1700:~$ cd syed
+bmsce@bmsce-Precision-T1700:~/syed$ ls
+file1.txt  file2.txt  file3.txt
+bmsce@bmsce-Precision-T1700:~/syed$ cd..
+cd..: command not found
+bmsce@bmsce-Precision-T1700:~/syed$ cd ..
+bmsce@bmsce-Precision-T1700:~$ cp vara syed
+cp: -r not specified; omitting directory 'vara'
+bmsce@bmsce-Precision-T1700:~$ cp vara syeds
+cp: -r not specified; omitting directory 'vara'
+bmsce@bmsce-Precision-T1700:~$ co -R vara syeds
+
+Command 'co' not found, but can be installed with:
+
+sudo apt install rcs
+
+bmsce@bmsce-Precision-T1700:~$ mkdir vinay
+bmsce@bmsce-Precision-T1700:~$ cp -r vara vinay
+bmsce@bmsce-Precision-T1700:~$ ls vinay
+vara
+bmsce@bmsce-Precision-T1700:~$ cd vinay
+bmsce@bmsce-Precision-T1700:~/vinay$ ls 
+vara
+bmsce@bmsce-Precision-T1700:~/vinay$ cd vara
+bmsce@bmsce-Precision-T1700:~/vinay/vara$ ls
+file1.txt  file2.txt  file3.txt
+bmsce@bmsce-Precision-T1700:~/vinay/vara$ cd ..
+bmsce@bmsce-Precision-T1700:~/vinay$ cd ..
+bmsce@bmsce-Precision-T1700:~$ ls
+ 1BM19CS227                 prime.scala
+ AAAA                       prime.scala.save
+ Android                    prime.scala.save.1
+ AndroidStudioProjects      programs
+ Average.txt                pt
+ BDA_LAB                    Public
+ cassandra                  R
+ Desktop                    sampleFruits.txt
+ Documents                  se
+ Downloads                  snap
+ eclipse-workspace          softwares
+ fp                         spark-2.4.8-bin-hadoop2.6.tgz
+ library_information.csv    spark-3.3.0-bin-hadoop3.tgz
+ Music                      sparkdata.txt
+ new                        syed
+ newFolder                  Templates
+ nikhil                    'Untitled Document 1'
+ ns-3.29                    vara
+ ns-allinone-2.35           varaprasad2.txt
+ ns-allinone-2.35.tar.gz    varaprasad.txt
+ ns-allinone-3.29           vara.txt
+ ns-allinone-3.29.tar.bz2   Videos
+ partimage                  vinay
+ Pictures                   workspace
+bmsce@bmsce-Precision-T1700:~$ cp -r vara pavan
+bmsce@bmsce-Precision-T1700:~$ cd pavan
+bmsce@bmsce-Precision-T1700:~/pavan$ ls
+file1.txt  file2.txt  file3.txt
+bmsce@bmsce-Precision-T1700:~/pavan$ cd ..
+bmsce@bmsce-Precision-T1700:~$ cat newFile1.txt
+cat: newFile1.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cat >  newFile1.txt
+newfile 
+bmsce@bmsce-Precision-T1700:~$ 
+bmsce@bmsce-Precision-T1700:~$ cp -i newFile.txt file1.txt
+cp: cannot stat 'newFile.txt': No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cp -i newFile.txt vara/file1.txt
+cp: cannot stat 'newFile.txt': No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cp -i newFile1.txt vara/file1.txt
+cp: overwrite 'vara/file1.txt'? y
+bmsce@bmsce-Precision-T1700:~$ cp -i newFile1.txt filesmth.txt
+bmsce@bmsce-Precision-T1700:~$ cat filesmth.txt
+newfile 
+bmsce@bmsce-Precision-T1700:~$ cp -i newFile1.txt filesmth.txt
+cp: overwrite 'filesmth.txt'? y
+bmsce@bmsce-Precision-T1700:~$ cd vara
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+file1.txt  file2.txt  file3.txt
+bmsce@bmsce-Precision-T1700:~/vara$ rm file
+rm: cannot remove 'file': No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ rm file.txt
+rm: cannot remove 'file.txt': No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ rm file1.txt
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+file2.txt  file3.txt
+bmsce@bmsce-Precision-T1700:~/vara$ cat < file1.txt
+bash: file1.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file1.txt
+new file 1
+bmsce@bmsce-Precision-T1700:~/vara$ 
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+file1.txt  file2.txt  file3.txt
+bmsce@bmsce-Precision-T1700:~/vara$ rm file[12].txt
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+file3.txt
+bmsce@bmsce-Precision-T1700:~/vara$ rm file*.txt
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+bmsce@bmsce-Precision-T1700:~/vara$ cat file1.txt
+cat: file1.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file1.txt
+hsgdfhgshdgfd
+bmsce@bmsce-Precision-T1700:~/vara$ cat file2.txt
+cat: file2.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file2.txt
+dfhsdfhdhgdfgd
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file3.txt
+fdhfudhfgdgdf
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+file1.txt  file2.txt  file3.txt
+bmsce@bmsce-Precision-T1700:~/vara$ cd ..
+bmsce@bmsce-Precision-T1700:~$ rm -r vara
+bmsce@bmsce-Precision-T1700:~$ ls
+ 1BM19CS227                 pavan
+ AAAA                       Pictures
+ Android                    prime.scala
+ AndroidStudioProjects      prime.scala.save
+ Average.txt                prime.scala.save.1
+ BDA_LAB                    programs
+ cassandra                  pt
+ Desktop                    Public
+ Documents                  R
+ Downloads                  sampleFruits.txt
+ eclipse-workspace          se
+ filesmth.txt               snap
+ fp                         softwares
+ library_information.csv    spark-2.4.8-bin-hadoop2.6.tgz
+ Music                      spark-3.3.0-bin-hadoop3.tgz
+ new                        sparkdata.txt
+ newFile1.txt               syed
+ newFolder                  Templates
+ nikhil                    'Untitled Document 1'
+ ns-3.29                    varaprasad2.txt
+ ns-allinone-2.35           varaprasad.txt
+ ns-allinone-2.35.tar.gz    vara.txt
+ ns-allinone-3.29           Videos
+ ns-allinone-3.29.tar.bz2   vinay
+ partimage                  workspace
+bmsce@bmsce-Precision-T1700:~$ cd vara
+bash: cd: vara: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ mkdir vara
+bmsce@bmsce-Precision-T1700:~$ cd vara
+bmsce@bmsce-Precision-T1700:~/vara$ cat file1.txt
+cat: file1.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file1.xt
+fdgfgfh
+bmsce@bmsce-Precision-T1700:~/vara$ cd ..
+bmsce@bmsce-Precision-T1700:~$ rm -r vara/
+bmsce@bmsce-Precision-T1700:~$ cd vara
+bash: cd: vara: No such file or directory
+bmsce@bmsce-Precision-T1700:~$ mkdir vara
+bmsce@bmsce-Precision-T1700:~$ cd vara
+bmsce@bmsce-Precision-T1700:~/vara$ cat file1.txt
+cat: file1.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ cat > file1.txt
+fsdfdghdfygygfysdgfd
+bmsce@bmsce-Precision-T1700:~/vara$ 
+bmsce@bmsce-Precision-T1700:~/vara$ rm -r home/bmsce/vara
+rm: cannot remove 'home/bmsce/vara': No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ cd ..
+bmsce@bmsce-Precision-T1700:~$ rm -r home/bmsce/vara
+rm: cannot remove 'home/bmsce/vara': No such file or directory
+bmsce@bmsce-Precision-T1700:~$ cd vara
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+file1.txt
+bmsce@bmsce-Precision-T1700:~/vara$ cat > vara.txt
+gandu nanau
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+file1.txt  vara.txt
+bmsce@bmsce-Precision-T1700:~/vara$ rm -r home/bmsce/vara
+rm: cannot remove 'home/bmsce/vara': No such file or directory
+bmsce@bmsce-Precision-T1700:~/vara$ rm -r /home/bmsce/vara
+bmsce@bmsce-Precision-T1700:~/vara$ ls
+bmsce@bmsce-Precision-T1700:~/vara$ ^C
+bmsce@bmsce-Precision-T1700:~/vara$ 
+
