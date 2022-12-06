@@ -1,0 +1,186 @@
+Shell script to find the FACTORIAL OF A NUMBER
+
+echo "Enter a number"
+read num
+
+fact=1
+
+while [ $num -gt 1 ]
+do
+  fact=$((fact * num))  #fact = fact * num
+  num=$((num - 1))      #num = num - 1
+done
+
+echo $fact
+
+Enter a number
+7
+5040
+
+Enter a number
+5
+120
+
+
+Shell script to compute the GROSS SALARY
+
+#!/bin/sh
+echo "Enter the basic salery of the employee"
+read b
+da=$(($b*10/100))
+echo "$da"
+hr=$(($b*20/100))
+echo "hr"
+gr=$(($b+$da+$hr))
+echo "GROSS SALARY IS $gr"
+
+
+Enter the basic salery of the employee
+500
+50
+hr
+GROSS SALARY IS 650
+
+
+Shell script to convert the temperat ure FAHRENHEIT to
+CELSIUS
+
+#!/bin/sh
+echo "Enter the temperature in Fahrenheit"
+read fahrenheit
+temp=$(($fahrenheit-32))
+celsius=$(($temp*5/9))
+echo "the temperature in celsius is $celsius"
+
+Enter the temperature in Fahrenheit
+50
+the temperature in celsius is 10
+
+
+Shell script to perform ARITHMETIC OPERATIONS on given
+two numbers
+
+
+#!/bin/sh
+echo "Enter any two numbers"
+read a b
+echo "OPERATIO\n
+1.add\n2.subtract\n3.multiply\n4.divide\n5.exit\nEnter your Choics"
+read choice
+case "$choice" in
+1)add=$((a+b|bc))
+  echo "$add";;
+2)subtract=$((a-b|bc))
+  echo "$subtract";;
+3)product=$((a*b|bc))
+  echo "$product";;
+4)divide=$((a/b|bc))
+  echo "$divide";;
+5)exit;;
+*)echo "INVALID CHOICE";;
+esac
+
+
+msce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ nano arth.sh
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ sh arth.sh
+Enter any two numbers
+4 5
+OPERATIO
+
+1.add
+2.subtract
+3.multiply
+4.divide
+5.exit
+Enter your Choics
+1
+9
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ sh arth.sh
+Enter any two numbers
+4 5
+OPERATIO
+
+1.add
+2.subtract
+3.multiply
+4.divide
+5.exit
+Enter your Choics
+2
+-1
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ sh arth.sh
+Enter any two numbers
+4 5
+OPERATIO
+
+1.add
+2.subtract
+3.multiply
+4.divide
+5.exit
+Enter your Choics
+3
+20
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ sh arth.sh
+Enter any two numbers
+4 5
+OPERATIO
+
+1.add
+2.subtract
+3.multiply
+4.divide
+5.exit
+Enter your Choics
+4
+0
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ sh arth.sh
+Enter any two numbers
+4 5
+OPERATIO
+
+1.add
+2.subtract
+3.multiply
+4.divide
+5.exit
+Enter your Choics
+5
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ sh arth.sh
+Enter any two numbers
+4 5
+OPERATIO
+
+1.add
+2.subtract
+3.multiply
+4.divide
+5.exit
+Enter your Choics
+8
+INVALID CHOICE
+
+
+Shell script to find the SUM OF EVEN NUMBERS UPTO N
+
+#!bin/sh
+echo "enter the upper limit"
+read n
+i=2
+while [ $i -lt $n ]
+do 
+   sum=$((sum+i))
+   i=$((i+2))
+done
+echo "Sum: $sum"
+
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ sh sumofeven.sh 
+enter the upper limit
+10
+Sum: 20
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab$ sh sumofeven.sh 
+enter the upper limit
+100
+Sum: 2450
+
+
