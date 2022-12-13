@@ -1,0 +1,184 @@
+
+
+/// LCM And GCD
+
+
+
+#!bin/sh
+echo "Enter two intergers"
+read m n
+echo " To find GCD and LCM"
+echo "===================="
+echo "given two numbers are"
+echo "m= $m and n=$n"
+temp=`expr $m \* $n`
+while [ $m != $n ]
+do
+if [ $m -gt $n ]
+then
+m=`expr $m - $n`
+else
+n=`expr $n - $m`
+fi
+done
+echo GCD=$n
+lcm=`expr $temp / $n`
+echo LCM=$lcm
+
+
+// OUTPUt
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ sh lcmgcd.sh
+Enter two intergers
+2 5
+ To find GCD and LCM
+====================
+given two numbers are
+m= 2 and n=5
+GCD=1
+LCM=10
+
+
+Shell script to print the COMBINATIONS OF NUMBERS 123
+
+#!bin/sh
+for i  in 1 2 3
+do
+for j in 1 2 3
+do
+for k in 1 2 3
+do
+echo $i $j $k
+done
+done
+done
+
+// OUTPUT
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ nano combination123.sh
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ sh combination123.sh
+1 1 1
+1 1 2
+1 1 3
+1 2 1
+1 2 2
+1 2 3
+1 3 1
+1 3 2
+1 3 3
+2 1 1
+2 1 2
+2 1 3
+2 2 1
+2 2 2
+2 2 3
+2 3 1
+2 3 2
+2 3 3
+3 1 1
+3 1 2
+3 1 3
+3 2 1
+3 2 2
+3 2 3
+3 3 1
+3 3 2
+3 3 3
+
+/Shell script to find the POWER OF A NUMBER
+
+
+#!/bin/sh
+
+echo "enter the values of base and n"
+read x n
+temp=$x
+i=1
+while [ $i -lt $n ]
+do
+x=$((x * temp))
+i=$((i + 1))
+done
+echo "result is $x"
+
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ nano powerAB.sh
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ sh powerAB.sh
+enter the values of base and n
+4 6
+result is 4096
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ sh powerAB.sh
+enter the values of base and n
+2 4 
+result is 16
+
+
+// Shell script to find the SUM OF N NUMBERS
+
+#!/bin/sh
+echo "Enter the size(N)"
+read N
+i=0
+sum=0
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+  read num
+  sum=$((sum+num))
+  i=$((i+1))
+done
+
+echo "sum is $sum"
+
+msce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ nano sumOfN.sh
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ sh sumOfN.sh
+Enter the size(N)
+5
+Enter Numbers
+9
+8
+4
+9
+2
+3
+sum is 35
+
+
+Shell script to find the FIBONACCI SERIES UPTO N
+
+
+#!/bin/sh
+echo "Enter the values of n"
+read n
+a=0
+b=1
+count=2
+echo "Fibnocci series"
+echo $a
+echo $b
+while [ $count -le $n ]
+do
+  fib=`expr $a + $b`
+  a=$b
+  b=$fib
+  echo $fib
+  count=`expr $count + 1`
+done
+
+
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ nano fib.sh
+bmsce@bmsce-Precision-T1700:~/Desktop/varaUnixLab/13-dec$ sh fib.sh
+Enter the values of n
+5
+Fibnocci series
+0
+1
+1
+2
+3
+5
+
+
+
+
+
+
+
+
