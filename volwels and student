@@ -1,0 +1,110 @@
+script to count the number of VOWELS OF A STRING
+
+#!bin/sh
+echo "enter the string "
+read st
+len=`expr $st | wc -c`
+len=`expr $len - 1`
+count=0
+while [ $len -gt 0 ]
+do
+ch=`expr $st | cut -c $len`
+case $ch in
+[aeiou,AEIOU])count=`expr $count + 1`;;
+esac
+len=`expr $len - 1`
+done
+echo "number of vowles $count"
+
+
+OUTPUT
+bmsce@bmsce-Precision-T1700:~$ sh findVowel.sh
+enter the string 
+vara
+number of vowles 2
+bmsce@bmsce-Precision-T1700:~$ sh findVowel.sh
+enter the string 
+varaprasad
+number of vowles 4
+
+
+Write
+a shell script to accept a designation code and its description from the terminal,
+performs rudimentary validation check and then adds an entry to a file (desig.lst).
+It validates the code entered with the ones 
+that already exist in the file. The
+script repeatedly prompts the user until the right response is obtained.
+
+
+#!/bin/sh
+echo "enter the student name"
+read name
+echo "enter the studnet number"
+read stdnum
+echo "enter the marks of subject1"
+read mark_sub_1
+echo "enter the marks of subject2"
+read mark_sub_2
+echo "enter the marks of subject3"
+read mark_sub_3
+if [ $mark_sub_1 -lt 50 ] || [ $mark_sub_2 -lt 50 ] || [ $mark_sub_3 -lt 50 ]
+then 
+echo "$name is failed"
+else
+total=`expr $mark_sub_1 + $mark_sub_2 + $mark_sub_3`
+avg=`expr $total / 3`
+echo "total ad avg is $total and $avg"
+if [ $avg -gt 90 ]
+then
+echo "distinction"
+else
+echo "first class"
+fi
+fi
+
+OUTPUT
+bmsce@bmsce-Precision-T1700:~$ nano studentmarks.sh
+bmsce@bmsce-Precision-T1700:~$ sh studentmarks.sh
+enter the student name
+vara
+enter the studnet number
+1
+enter the marks of subject1
+34
+enter the marks of subject2
+67
+enter the marks of subject3
+89
+vara is failed
+bmsce@bmsce-Precision-T1700:~$ sh studentmarks.sh
+enter the student name
+vara
+enter the studnet number
+2
+enter the marks of subject1
+67
+enter the marks of subject2
+89
+enter the marks of subject3
+99
+total ad avg is 255 and 85
+first class
+bmsce@bmsce-Precision-T1700:~$ sh studentmarks.sh
+enter the student name
+vara
+enter the studnet number
+3
+enter the marks of subject1
+89
+enter the marks of subject2
+99 
+enter the marks of subject3
+98
+total ad avg is 286 and 95
+distinction
+bmsce@bmsce-Precision-T1700:~$ 
+
+
+
+
+
