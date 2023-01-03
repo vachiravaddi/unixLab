@@ -1,0 +1,77 @@
+Shell script to CHECK NUMBER OF LINE S, WORDS, CHARACTERS in a file
+
+#!/bin/bash
+echo "enter the file name"
+read file
+if (file $file)then
+echo "file exist"
+wc -l $file
+echo "no .of words"
+wc -w $file
+echo "no of char"
+wc -c $file
+else
+echo "file not exist"
+fi 
+
+OUTPUT
+
+bmsce@bmsce-Precision-T1700:~$ cat vara
+hi this is varaprasad
+i'm the best
+bmsce@bmsce-Precision-T1700:~$ sh count
+enter the file name
+vara
+vara: ASCII text
+file exist
+2 vara
+no .of words
+7 vara
+no of char
+35 vara
+
+
+Write a shell script to accept and validate department code. The script  should look up a code list(consisting of code
+number , department name and Emp-Id of the head of the department) maintained as a here document in the script itself and flashes the department name on the terminal.
+
+#!/bin/sh
+#valcode.sh
+IFS="|"
+while echo "enter department code:\c";do
+read dcode
+set -- `grep "^$dcode"<<limit
+01|accounts|6213
+02|admin|5423
+03|marketing|6521
+04|personnel|2365
+05|production|9876
+06|sales|1006
+limit`
+
+case $# in
+
+3)echo "Department name:$2\nEmp-id of head of dept: $3\n"
+shift 3;;
+*)echo "Invalid code";
+
+
+OUTPUT
+
+bmsce@bmsce-Precision-T1700:~$ nano deptCode.sh
+bmsce@bmsce-Precision-T1700:~$ sh deptCode.sh
+enter department code:01
+Department name:accounts
+Emp-id of head of dept: 6213
+
+enter department code:05
+Department name:production
+Emp-id of head of dept: 9876
+
+enter department code:99
+Invalid code
+enter department code:56
+Invalid code
+enter department code:^C
+
+
+
