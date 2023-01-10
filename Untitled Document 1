@@ -1,0 +1,138 @@
+ List all the files and directories and its attributes
+ OUTPUT
+
+bmsce@bmsce-Precision-T1700:~$ mkdir lab9
+bmsce@bmsce-Precision-T1700:~$ cd lab9
+bmsce@bmsce-Precision-T1700:~/lab9$ cat simple.txt 
+cat: simple.txt: No such file or directory
+bmsce@bmsce-Precision-T1700:~/lab9$ cat > simple.txt 
+varaprasad 
+kanna
+vaddi ^C
+bmsce@bmsce-Precision-T1700:~/lab9$ cat > simple2.txt
+this si simpel file 2
+^C
+bmsce@bmsce-Precision-T1700:~/lab9$ mkdir subdir
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l
+total 12
+-rw-r--r-- 1 bmsce bmsce   22 Jan 10 11:46 simple2.txt
+-rw-r--r-- 1 bmsce bmsce   18 Jan 10 11:46 simple.txt
+drwxr-xr-x 2 bmsce bmsce 4096 Jan 10 11:46 subdir
+
+
+
+
+2.       List
+only directories and its attributes
+
+OUTPUT 
+
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -ld
+drwxr-xr-x 3 bmsce bmsce 4096 Jan 10 11:46 .
+bmsce@bmsce-Precision-T1700:~/lab9$ 
+
+
+
+Change
+the permission using relative mode for the following
+
+OUTPUT
+
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod u+x simple.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l
+total 12
+-rw-r--r-- 1 bmsce bmsce   22 Jan 10 11:46 simple2.txt
+-rwxr--r-- 1 bmsce bmsce   18 Jan 10 11:46 simple.txt
+drwxr-xr-x 2 bmsce bmsce 4096 Jan 10 11:46 subdir
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod o+wx simple.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l
+total 12
+-rw-r--r-- 1 bmsce bmsce   22 Jan 10 11:46 simple2.txt
+-rwxr--rwx 1 bmsce bmsce   18 Jan 10 11:46 simple.txt
+drwxr-xr-x 2 bmsce bmsce 4096 Jan 10 11:46 subdir
+bmsce@bmsce-Precision-T1700:~/lab9$ 
+
+
+execution 
+permission to all on file start
+
+OUTPUT
+
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod a+x simple2.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l simple2.txt
+-rwxr-xr-x 1 bmsce bmsce 22 Jan 10 11:46 simple2.txt
+
+
+Assign all permission to users and only read and
+execute permission to group and others on file end
+
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l simple3.txt
+-rw-r--r-- 1 bmsce bmsce 30 Jan 10 12:09 simple3.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod a+wrx simple3.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod go-w simple3.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l simple3.txt
+-rwxr-xr-x 1 bmsce bmsce 30 Jan 10 12:09 simple3.txt
+
+Remove execute permission from all and assign
+read and execute permission on rest two.
+
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod a-x simple3.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod go+rx simple3.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l simple3.txt
+-rw-r-xr-x 1 bmsce bmsce 30 Jan 10 12:09 simple3.txt
+
+
+Change
+using absolute permission
+
+Assign only read and write permission to all
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod 666 simple3.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l simple3.txt
+-rw-rw-rw- 1 bmsce bmsce 30 Jan 10 12:09 simple3.txt
+
+Assign only execute permission to users and
+group
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod 116 simple3.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l simple3.txt
+---x--xrw- 1 bmsce bmsce 30 Jan 10 12:09 simple3.txt
+
+
+create a file
+called workfile.txt.
+
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l workfile.txt
+-rw-r--r-- 1 bmsce bmsce 73 Jan 10 12:18 workfile.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod 167 workfile.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l workfile.txt
+---xrw-rwx 1 bmsce bmsce 73 Jan 10 12:18 workfile.txt
+
+
+Change the file permission of the
+file to -rwx---r-x.
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod 705 workfile.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l workfile.txt
+
+
+Remove all file permission from the
+file, so that the file permission is ----------.
+bmsce@bmsce-Precision-T1700:~/lab9$ chmod 000 workfile.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ ls -l workfile.txt
+---------- 1 bmsce bmsce 73 Jan 10 12:18 workfile.txt
+bmsce@bmsce-Precision-T1700:~/lab9$ 
+
+
+
+
+-rwx---r-x 1 bmsce bmsce 73 Jan 10 12:18 workfile.txt
+
+
+
+
+
+
+
+
+
+
+
+
